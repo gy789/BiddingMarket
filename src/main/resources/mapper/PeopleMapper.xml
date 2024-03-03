@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biddingmarket.mapper.PeopleMapper">
+
+    <select id="getPeopleList" resultType="People" parameterType="java.util.Map">
+        select * from people where uid = #{uid}
+    </select>
+    <select id="getPeopleInfo" parameterType="java.lang.Integer" resultType="People">
+        select * from people where people_id = #{people_id}
+    </select>
+    <update id="updatePeoplieInfo" parameterType="com.biddingmarket.entity.People">
+        update people set people_name = #{people_name},people_number = #{people_number} where people_id = #{people_id}
+    </update>
+    <delete id="delPeople" parameterType="java.lang.Integer">
+        delete from people where people_id = #{people_id}
+    </delete>
+    <insert id="addPeople"  parameterType="java.util.Map">
+      insert into people(people_name,people_number,uid) value(#{people_name},#{people_number},#{uid})
+    </insert>
+</mapper>
