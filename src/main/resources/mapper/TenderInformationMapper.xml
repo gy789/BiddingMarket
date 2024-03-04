@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.biddingmarket.mapper.TenderInformationMapper">
+
+    <select id="selectAllTenderInformation" resultType="com.biddingmarket.entity.TenderInformation">
+        SELECT * FROM TenderInformation
+    </select>
+
+    <select id="selectTenderInformationById" parameterType="int" resultType="com.biddingmarket.entity.TenderInformation">
+        SELECT * FROM TenderInformation WHERE id = #{id}
+    </select>
+
+    <insert id="insertTenderInformation" parameterType="com.biddingmarket.entity.TenderInformation">
+        INSERT INTO TenderInformation (projectName, projectNumber, projectType, tenderUnit, tenderAgency, publicationDate, deadlineDate, tenderScope, documentAccessMethod, bidDeadline, bidOpeningDate, bidBond, bidderQualifications, bidSubmissionMethod, documentFee, contactInformation, create_time, update_time)
+        VALUES (#{projectName}, #{projectNumber}, #{projectType}, #{tenderUnit}, #{tenderAgency}, #{publicationDate}, #{deadlineDate}, #{tenderScope}, #{documentAccessMethod}, #{bidDeadline}, #{bidOpeningDate}, #{bidBond}, #{bidderQualifications}, #{bidSubmissionMethod}, #{documentFee}, #{contactInformation}, #{create_time}, #{update_time})
+    </insert>
+
+</mapper>

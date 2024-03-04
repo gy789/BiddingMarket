@@ -33,7 +33,7 @@ public class UserController {
 
             session.setAttribute("user", user);
 
-            return "biddingmarket/index";
+            return "redirect:/index";
         }
     }
 
