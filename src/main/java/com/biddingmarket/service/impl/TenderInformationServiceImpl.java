@@ -34,4 +34,14 @@ public class TenderInformationServiceImpl implements TenderInformationService {
     public int insertSelective(TenderInformation record) {
         return tenderInformationMapper.insertSelective(record);
     }
+
+
+    @Override
+    public int updateTenderInformation(int id,TenderInformation tenderInformation) {
+        return tenderInformationMapper.updateTenderInformation(id,tenderInformation);
+    }
+    @Override
+    public int deleteTenderInformation(int id) {
+        return tenderInformationMapper.deleteTenderInformation(id);
+    }
 }

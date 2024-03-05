@@ -12,4 +12,8 @@ public interface TenderInformationMapper {
     int insert(TenderInformation record);
 
     int insertSelective(TenderInformation record);
+
+    int updateTenderInformation(int id,TenderInformation tenderInformation);
+
+    int deleteTenderInformation(int id);
 }
